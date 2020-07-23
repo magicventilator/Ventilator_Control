@@ -1,5 +1,7 @@
 # Low Cost Ventilator for the Covid-19 pandemic
 
+http://magicventilator.com/
+
 ![](http://magicventilator.com/wp-content/uploads/2020/07/Screen-Shot-2020-07-01-at-6.11.59-PM-1-1024x640.png)
 
 Here is some screenshots of the software running Magic Ventilator
