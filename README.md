@@ -64,10 +64,6 @@ Can be configured to connecting dual limb breathing circuit or single limb breat
 
 # How the Magic Ventilator works
 
-July 12, 2020
-
-[No Comments](http://magicventilator.com/2020/07/12/how-the-magic-ventilator-works/#respond)
-
 ![Mechanical ventilator diagram](http://magicventilator.com/wp-content/uploads/2020/07/Main-Diagram_3-1024x593.jpg)
 
 Basic diagram of Magic Ventilator
