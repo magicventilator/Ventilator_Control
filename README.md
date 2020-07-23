@@ -62,37 +62,59 @@ Can be configured to connecting dual limb breathing circuit or single limb breat
 4.  Low/High Mandatory Expiration volume
 5.  Low/High Spontaneous Expiration volume
 
-How the Magic Ventilator works
-July 12, 2020 No Comments
-Mechanical ventilator diagram
+# How the Magic Ventilator works
+
+July 12, 2020
+
+[No Comments](http://magicventilator.com/2020/07/12/how-the-magic-ventilator-works/#respond)
+
+![Mechanical ventilator diagram](http://magicventilator.com/wp-content/uploads/2020/07/Main-Diagram_3-1024x593.jpg)
+
 Basic diagram of Magic Ventilator
-Here are the basic parts I used:
-AC powered Air mattress inflator (120v or 220v depending on what country you are in).
-x2 car mass flow sensors with flow temperature sensors.
-x2 DC Direct acting solenoid valves (0-5psi).
-Pressure sensor (I used MPX10).
-Pressure relief valve (Can be made from parts bought from a local hardware store (Please contact me for details).
-x2 HEPA filter.
-3/4 inch plumbing pipes (Can be bought from any local plumbing store).
-Arduino based micro controller (ESP32 or Teensy). Arduino Uno is not fast enough to handle it.
-Power supply with x3 LM317T to match to the different voltages needed by the different components.
-Basic circuit diagram
-Basic circuit diagram for the Mechanical ventilator 
-Basic description of how it works
-During inspiratory phase we control the AC air pump with the triac and pump in air at certain speed and pressure.
-We open the inspiratory solenoid valve and let the air flow through the air flow sensor and through the HEPA filter and into the patient lungs.
-Once inspratory phase is over (can be triggered by time, volume or pressure) we open the expiratory solenoid valve and release the air through the expiratory flow sensor and out through the expiratory HEPA filter.
-Some details of the circuit
-AC control circuit (120v - 220v) for the air pump
+
+## Here are the basic parts I used:
+
+1.  AC powered Air mattress inflator (120v or 220v depending on what country you are in).
+2.  x2 car mass flow sensors with flow temperature sensors.
+3.  x2 DC Direct acting solenoid valves (0-5psi).
+4.  Pressure sensor (I used MPX10).
+5.  Pressure relief valve (Can be made from parts bought from a local hardware store (Please contact me for details).
+6.  x2 HEPA filter.
+7.  3/4 inch plumbing pipes (Can be bought from any local plumbing store).
+8.  Arduino based micro controller (ESP32 or Teensy). Arduino Uno is not fast enough to handle it.
+9.  Power supply with x3 LM317T to match to the different voltages needed by the different components.
+
+## Basic circuit diagram
+
+![Basic circuit diagram for the Mechanical ventilator ](http://magicventilator.com/wp-content/uploads/2020/07/Circuit-Diagram_1.jpg)
+
+## Basic description of how it works
+
+1.  During inspiratory phase we control the AC air pump with the triac and pump in air at certain speed and pressure.
+2.  We open the inspiratory solenoid valve and let the air flow through the air flow sensor and through the HEPA filter and into the patient lungs.
+3.  Once inspratory phase is over (can be triggered by time, volume or pressure) we open the expiratory solenoid valve and release the air through the expiratory flow sensor and out through the expiratory HEPA filter.
+
+## Some details of the circuit
+
+![AC control circuit (120v - 220v) for the air pump](http://magicventilator.com/wp-content/uploads/2020/07/AC_Control-1024x517.jpg)
+
 AC control circuit (120v – 220v) for the air pump
-Solenoid control circuit
+
+![Solenoid control circuit](http://magicventilator.com/wp-content/uploads/2020/07/MOSFET.jpg)
+
 Solenoid control circuit. I used 12v solenoid but modified it to use 5v since breathing pressure is not high (never exceeds 1 psi).
-Op amp circuit
+
+![Op amp circuit](http://magicventilator.com/wp-content/uploads/2020/07/op-amp.png)
+
 LM2902N I used to amplify the pressure sensor signal and send to the controller to process.
-Calibration tools
-Low Pressure Gauge (1 psi or 30 inch of water is enough) to add to the ventilator when testing to make sure you have the pressure reading correct.
-Pitot tube to calibrate the flow sensor (Pitot tubes are used on plans and boats to measure their speed).
-User interface and software
+
+## Calibration tools
+
+1.  Low Pressure Gauge (1 psi or 30 inch of water is enough) to add to the ventilator when testing to make sure you have the pressure reading correct.
+2.  [Pitot tube](https://en.wikipedia.org/wiki/Pitot_tube)  to calibrate the flow sensor (Pitot tubes are used on plans and boats to measure their speed).
+
+## User interface and software
+
 I’m using a python server to run locally on a laptop and communicate with the ventilator hardware.
 
 The user interface runs on a Chrome browser and communicates with the python server to send user command to the hardware and to display to the user graphs, alarms and the ventilator status.
